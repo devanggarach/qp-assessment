@@ -1,4 +1,6 @@
 import { setEnvVariables } from './config';
+import dotenv from 'dotenv';
+dotenv.config();
 
 async function start(): Promise<void> {
 	try {

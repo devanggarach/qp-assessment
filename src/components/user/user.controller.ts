@@ -63,7 +63,7 @@ export class UserController {
 		try {
 			const response = serviceResponse.fetched({
 				message: 'Profile fetched',
-				data: user,
+				data: { ...user },
 			});
 			res.status(response.statusCode).json(response);
 		} catch (error: any) {

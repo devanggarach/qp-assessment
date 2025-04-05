@@ -1,6 +1,7 @@
 import { Router } from 'express';
 import { UserController } from './user.controller';
 import * as validate from './user.validate';
+import { AuthHelper } from '../../helpers/auth.helper';
 
 const ROUTE_PATH = {
 	REGISTER: '/register',
@@ -19,7 +20,7 @@ class UserRoutes {
 	registerMethods() {
 		this.router.post(ROUTE_PATH.REGISTER, validate.create, this.userController.create);
 		this.router.post(ROUTE_PATH.LOGIN, validate.login, this.userController.login);
-		this.router.get(ROUTE_PATH.PROFILE, this.userController.profile);
+		this.router.get(ROUTE_PATH.PROFILE, AuthHelper.authValidate, this.userController.profile);
 	}
 }
 

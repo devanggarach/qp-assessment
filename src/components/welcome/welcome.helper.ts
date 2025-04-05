@@ -10,7 +10,7 @@ interface ListGroceryParams {
 	page?: number;
 	limit?: number;
 	search?: string;
-	orderBy?: keyof Prisma.GroceryItemOrderByWithRelationInput;
+	orderBy?: any;
 	orderDirection?: 'asc' | 'desc';
 	isAvailable?: '';
 }
@@ -32,7 +32,7 @@ export class WelcomeHelper {
 		try {
 			const skip = (page - 1) * limit;
 
-			const where: Prisma.GroceryItemWhereInput = {
+			const where: any = {
 				...(isAvailable !== '' && isAvailable !== undefined && isAvailable !== null
 					? { isAvailable: isAvailable === true || isAvailable === 'true' }
 					: {}),

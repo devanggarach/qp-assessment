@@ -359,7 +359,70 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "PROFILE",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{TOKEN}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{URL}}/user/profile",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"user",
+										"profile"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "280"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"118-n83lspand1Eaw+P11Xl3jgyrfgQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 05 Apr 2025 19:30:59 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"traceId\": \"04191b42-796a-43ae-968a-665731bdf2a2\",\n    \"statusCode\": 200,\n    \"message\": \"Profile fetched\",\n    \"data\": {\n        \"id\": 2,\n        \"email\": \"rosina.mccullough@gmail.com\",\n        \"createdAt\": \"2025-04-05T19:26:52.673Z\",\n        \"updatedAt\": \"2025-04-05T19:26:52.673Z\"\n    },\n    \"successCode\": \"FETCHED\",\n    \"meta\": {}\n}"
+						}
+					]
 				}
 			]
 		},

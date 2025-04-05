@@ -1,4 +1,5 @@
 import { ServiceResponse } from '../../helpers/serviceResponse.helper';
+import type { Prisma } from '@prisma/client';
 import prisma from '../../prisma/db.helper';
 import { ERROR } from '../../helpers/response.status';
 import { logger } from '../../services/logger';
@@ -102,7 +103,7 @@ export class OrderRepository {
 			let totalAmount = 0;
 
 			const orderItems = orderData.items.map((item: any) => {
-				const dbItem = groceryItems.find(g => g.id === item.groceryItemId);
+				const dbItem = groceryItems.find((g: (typeof groceryItems)[number]) => g.id === item.groceryItemId);
 
 				if (!dbItem) {
 					throw this.serviceResponse.badRequestError({
@@ -141,7 +142,7 @@ export class OrderRepository {
 				};
 			});
 
-			return await prisma.$transaction(async tx => {
+			return await prisma.$transaction(async (tx: any) => {
 				const order = await tx.order.create({
 					data: {
 						userId,
