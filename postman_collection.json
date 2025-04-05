@@ -1,0 +1,2282 @@
+{
+	"info": {
+		"_postman_id": "c906fac5-326f-42e9-8c53-b98e2dccfeca",
+		"name": "QP Grocery",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26923074"
+	},
+	"item": [
+		{
+			"name": "USER",
+			"item": [
+				{
+					"name": "REGISTER",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"devanggarach@gmail.com\",\n    \"password\": \"Time@2025\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/user/register",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "SUCCESS",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"devanggarach@gmail.com\",\n    \"password\": \"Time@2025\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/user/register",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"user",
+										"register"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "367"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"16f-0XvzJWfgAwpwT5H+QaNSCQPZgZ0\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 05 Apr 2025 12:59:46 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"traceId\": \"1e6cf5f2-f3db-490a-83c3-e59f193bd8de\",\n    \"statusCode\": 201,\n    \"message\": \"User registered successfully\",\n    \"data\": {\n        \"id\": 51,\n        \"email\": \"devanggarach@gmail.com\",\n        \"passwordHash\": \"$2a$10$jTbIt60ELEvT6JE.u6y8Ee263EMWGlfxaIookADHfffEdue2uzB9i\",\n        \"createdAt\": \"2025-04-05T12:59:46.807Z\",\n        \"updatedAt\": \"2025-04-05T12:59:46.807Z\"\n    },\n    \"successCode\": \"CREATED\",\n    \"meta\": {}\n}"
+						},
+						{
+							"name": "FAILED EMAIL VALIDATON",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"garachdevang\",\n    \"password\": \"Time@2025\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/user/register",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"user",
+										"register"
+									]
+								}
+							},
+							"status": "Unprocessable Entity",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "199"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"c7-tdFSQ2b5EMZjmumOqUSZXUZJ2Uc\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 05 Apr 2025 13:01:18 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"error\",\n    \"traceId\": \"98860264-0930-435d-8530-bd32d0ee7606\",\n    \"statusCode\": 422,\n    \"errorCode\": \"00033\",\n    \"message\": \"Validation Failed\",\n    \"error\": \"VALIDATION_FAILED\",\n    \"meta\": [\n        {\n            \"message\": \"Invalid email\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "FAILED PASSWORD VALIDATION",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"garachdevang@gmail.com\",\n    \"password\": \"Time\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/user/register",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"user",
+										"register"
+									]
+								}
+							},
+							"status": "Unprocessable Entity",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "202"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"ca-J0hIuBTYPEuuetWOU4ihAekFKyA\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 05 Apr 2025 13:00:17 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"error\",\n    \"traceId\": \"6488b6f9-e17b-473d-9c99-7d2a3cf6df3e\",\n    \"statusCode\": 422,\n    \"errorCode\": \"00033\",\n    \"message\": \"Validation Failed\",\n    \"error\": \"VALIDATION_FAILED\",\n    \"meta\": [\n        {\n            \"message\": \"Invalid Password\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "LOGIN",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var d = pm.response.json()",
+									"pm.collectionVariables.set('TOKEN', d.accessToken)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"isabel3@hotmail.com\",\n    \"password\": \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/user/login",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "LOGIN",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"isabel3@hotmail.com\",\n    \"password\": \"123456\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/user/login",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"user",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "428"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1ac-xtMU8dCEEJfzB5mnDhdC/JoLKDk\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 05 Apr 2025 13:14:47 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"traceId\": \"c6cb4747-372d-4cd9-a198-b17dd9110fab\",\n    \"statusCode\": 200,\n    \"message\": \"Login successful\",\n    \"data\": {\n        \"id\": 8,\n        \"email\": \"isabel3@hotmail.com\",\n        \"createdAt\": \"2025-04-05T12:47:21.566Z\"\n    },\n    \"successCode\": \"FETCHED\",\n    \"meta\": {},\n    \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiZW1haWwiOiJpc2FiZWwzQGhvdG1haWwuY29tIiwiaWF0IjoxNzQzODU4ODg3LCJleHAiOjE3NDM4NjI0ODd9.ZOdIaV7Px1_z2m3B1xQ8jqU6P-y3-VBaZcpX3DgscZ8\"\n}"
+						}
+					]
+				},
+				{
+					"name": "PROFILE",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/user/profile",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"user",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ORDER",
+			"item": [
+				{
+					"name": "CREATE",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"items\": [\n        {\n            \"groceryItemId\": 2,\n            \"quantity\": 2\n        },\n        {\n            \"groceryItemId\": 6,\n            \"quantity\": 1\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/order",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"order"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "FAILED AUTHENTICATION",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{TOKEN}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"items\": [\n        {\n            \"groceryItemId\": 2,\n            \"quantity\": 2\n        },\n        {\n            \"groceryItemId\": 6,\n            \"quantity\": 1\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/order",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"order"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "203"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"cb-AcRbn4W5IMcNrYL/uBiSig6cYbM\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 05 Apr 2025 14:59:45 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"error\",\n    \"traceId\": \"d65cecee-7e45-45fa-afad-718f10ffe8ba\",\n    \"statusCode\": 401,\n    \"errorCode\": \"00011\",\n    \"message\": \"User doesn't exists or credentials are invalid\",\n    \"error\": \"UNAUTHORIZED_ACCESS\",\n    \"meta\": {}\n}"
+						},
+						{
+							"name": "ORDER CREATED",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{TOKEN}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"items\": [\n        {\n            \"groceryItemId\": 2,\n            \"quantity\": 2\n        },\n        {\n            \"groceryItemId\": 6,\n            \"quantity\": 1\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/order",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"order"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "757"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2f5-TOZhVa6mC3afyUt/cHzwu1xLuC4\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 05 Apr 2025 15:22:59 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"traceId\": \"249b1a8b-0209-443e-b721-b3b26aae06bd\",\n    \"statusCode\": 200,\n    \"message\": \"Order created successfully\",\n    \"data\": {\n        \"id\": 1,\n        \"userId\": 8,\n        \"totalAmount\": \"100\",\n        \"createdAt\": \"2025-04-05T15:22:59.798Z\",\n        \"items\": [\n            {\n                \"id\": 1,\n                \"orderId\": 1,\n                \"groceryItemId\": 2,\n                \"quantity\": 2,\n                \"unitPrice\": \"25\",\n                \"totalPrice\": \"50\",\n                \"groceryItem\": {\n                    \"id\": 2,\n                    \"name\": \"Sugar 500G\",\n                    \"price\": \"25\",\n                    \"stock\": 100,\n                    \"isAvailable\": true,\n                    \"createdAt\": \"2025-04-05T13:22:10.527Z\",\n                    \"updatedAt\": \"2025-04-05T14:56:57.580Z\"\n                }\n            },\n            {\n                \"id\": 2,\n                \"orderId\": 1,\n                \"groceryItemId\": 6,\n                \"quantity\": 1,\n                \"unitPrice\": \"50\",\n                \"totalPrice\": \"50\",\n                \"groceryItem\": {\n                    \"id\": 6,\n                    \"name\": \"Sugar 1KG\",\n                    \"price\": \"50\",\n                    \"stock\": 10,\n                    \"isAvailable\": true,\n                    \"createdAt\": \"2025-04-05T14:57:05.411Z\",\n                    \"updatedAt\": \"2025-04-05T14:57:05.411Z\"\n                }\n            }\n        ]\n    },\n    \"successCode\": \"FETCHED\",\n    \"meta\": {}\n}"
+						}
+					]
+				},
+				{
+					"name": "LIST ORDERS",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/order",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"order"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "LIST ORDERS",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{TOKEN}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{URL}}/order",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"order"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "170"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"aa-8c1CuU0g2uDAAtdyg03J2Rl49Es\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 05 Apr 2025 15:01:12 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"traceId\": \"d4e44a1a-03b5-43a2-b896-77e4b25828e8\",\n    \"statusCode\": 200,\n    \"message\": \"Orders fetched successfully\",\n    \"data\": [],\n    \"successCode\": \"FETCHED\",\n    \"meta\": {}\n}"
+						},
+						{
+							"name": "LIST ORDERS",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{TOKEN}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{URL}}/order",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"order"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "758"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2f6-3eTDNgrk7CDndaARIkMj3f0jUUc\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 05 Apr 2025 15:25:14 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"traceId\": \"887eb447-5cdf-4c63-a19a-b4f4fa6cb96b\",\n    \"statusCode\": 200,\n    \"message\": \"Orders fetched successfully\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"userId\": 8,\n            \"totalAmount\": \"100\",\n            \"createdAt\": \"2025-04-05T15:22:59.798Z\",\n            \"items\": [\n                {\n                    \"id\": 1,\n                    \"orderId\": 1,\n                    \"groceryItemId\": 2,\n                    \"quantity\": 2,\n                    \"unitPrice\": \"25\",\n                    \"totalPrice\": \"50\",\n                    \"groceryItem\": {\n                        \"id\": 2,\n                        \"name\": \"Sugar 500G\",\n                        \"price\": \"25\",\n                        \"stock\": 98,\n                        \"isAvailable\": true,\n                        \"createdAt\": \"2025-04-05T13:22:10.527Z\",\n                        \"updatedAt\": \"2025-04-05T15:22:59.833Z\"\n                    }\n                },\n                {\n                    \"id\": 2,\n                    \"orderId\": 1,\n                    \"groceryItemId\": 6,\n                    \"quantity\": 1,\n                    \"unitPrice\": \"50\",\n                    \"totalPrice\": \"50\",\n                    \"groceryItem\": {\n                        \"id\": 6,\n                        \"name\": \"Sugar 1KG\",\n                        \"price\": \"50\",\n                        \"stock\": 9,\n                        \"isAvailable\": true,\n                        \"createdAt\": \"2025-04-05T14:57:05.411Z\",\n                        \"updatedAt\": \"2025-04-05T15:22:59.833Z\"\n                    }\n                }\n            ]\n        }\n    ],\n    \"successCode\": \"FETCHED\",\n    \"meta\": {}\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "ADMIN",
+			"item": [
+				{
+					"name": "LOGIN",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var d = pm.response.json()",
+									"pm.collectionVariables.set('ADMIN_TOKEN', d.accessToken)"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"emanuel51@hotmail.com\",\n    \"password\": \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/admin/login",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"admin",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "SUCCESS",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"emanuel51@hotmail.com\",\n    \"password\": \"123456\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/admin/login",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"admin",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "433"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1b1-OhQ7bRyEHEcddMMLf5w53JLZod8\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 05 Apr 2025 13:14:22 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"traceId\": \"365d0a2d-20ff-4311-9f97-0ff110baafc5\",\n    \"statusCode\": 200,\n    \"message\": \"Login successful\",\n    \"data\": {\n        \"id\": 2,\n        \"email\": \"emanuel51@hotmail.com\",\n        \"createdAt\": \"2025-04-05T12:53:27.297Z\"\n    },\n    \"successCode\": \"FETCHED\",\n    \"meta\": {},\n    \"accessToken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJlbWFudWVsNTFAaG90bWFpbC5jb20iLCJpYXQiOjE3NDM4NTg4NjIsImV4cCI6MTc0Mzg2MjQ2Mn0.1rC-x_CEzbQhK4K1_9nqphoNQCs24UijGdS9XLIVVrQ\"\n}"
+						}
+					]
+				},
+				{
+					"name": "ADD PRODUCT",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{ADMIN_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Sugar 1KG\",\n    \"price\": 50,\n    \"stock\": 10\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/admin/product",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"admin",
+								"product"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "FAILED INVALID STOCK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{ADMIN_TOKEN}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Sugar 1KG\",\n    \"price\": 50\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/admin/product",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"admin",
+										"product"
+									]
+								}
+							},
+							"status": "Unprocessable Entity",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "207"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"cf-3pqpWvtNoO7fmI9DCLgUrmoguS0\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 05 Apr 2025 13:21:01 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"error\",\n    \"traceId\": \"82c2891e-4b75-4677-afd4-08581d919e29\",\n    \"statusCode\": 422,\n    \"errorCode\": \"00033\",\n    \"message\": \"Validation Failed\",\n    \"error\": \"VALIDATION_FAILED\",\n    \"meta\": [\n        {\n            \"message\": \"Invalid product stock\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "SUCCESS",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{ADMIN_TOKEN}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Sugar 1KG\",\n    \"price\": 50,\n    \"stock\": 10\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/admin/product",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"admin",
+										"product"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "315"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"13b-ZdlWmCx7IMV+fkI4E6E4NlpsICw\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 05 Apr 2025 13:21:44 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"traceId\": \"5e933ec3-7c05-4b15-8539-f098eb69fe8d\",\n    \"statusCode\": 201,\n    \"message\": \"Product added successfully\",\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"Sugar 1KG\",\n        \"price\": \"50\",\n        \"stock\": 10,\n        \"isAvailable\": true,\n        \"createdAt\": \"2025-04-05T13:21:44.356Z\",\n        \"updatedAt\": \"2025-04-05T13:21:44.356Z\"\n    },\n    \"successCode\": \"CREATED\",\n    \"meta\": {}\n}"
+						}
+					]
+				},
+				{
+					"name": "UPDATE PRODUCT",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{ADMIN_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Sugar 1.5KG\",\n    \"price\": 69,\n    \"stock\": 15\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/admin/product/1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"admin",
+								"product",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ON TOKEN EXPIRE",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{ADMIN_TOKEN}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Sugar 1.5KG\",\n    \"price\": 69,\n    \"stock\": 15\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/admin/product/1",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"admin",
+										"product",
+										"1"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "175"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"af-7fI1TDP53Z91e8ERN/GqKr6C0zQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 05 Apr 2025 14:36:25 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"error\",\n    \"traceId\": \"28546ab2-f3b6-4da1-9048-bd07cf27ecdf\",\n    \"statusCode\": 401,\n    \"errorCode\": \"UNAUTHORIZED_ACCESSS\",\n    \"message\": \"UNAUTHORIZED_ACCESSS\",\n    \"error\": \"UNAUTHORIZED\"\n}"
+						},
+						{
+							"name": "UPDATE PRODUCT",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{ADMIN_TOKEN}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Sugar 1.5KG\",\n    \"price\": 69,\n    \"stock\": 15\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/admin/product/1",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"admin",
+										"product",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "319"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"13f-KSZiuzrsgjxIvRRDBuCun4GLz4Q\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 05 Apr 2025 14:36:54 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"traceId\": \"aa151cc3-a37b-4cdd-af4b-8efddd8f59ac\",\n    \"statusCode\": 200,\n    \"message\": \"Product updated successfully\",\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"Sugar 1.5KG\",\n        \"price\": \"69\",\n        \"stock\": 15,\n        \"isAvailable\": true,\n        \"createdAt\": \"2025-04-05T13:21:44.356Z\",\n        \"updatedAt\": \"2025-04-05T14:36:54.111Z\"\n    },\n    \"successCode\": \"UPDATED\",\n    \"meta\": {}\n}"
+						}
+					]
+				},
+				{
+					"name": "DELETE PRODUCT",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{ADMIN_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/admin/product/:id",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"admin",
+								"product",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "NOT FOUND",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{ADMIN_TOKEN}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{URL}}/admin/product/:id",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"admin",
+										"product",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "168"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"a8-8eapONP1JCv7gDcgFTYRBFtYbTo\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 05 Apr 2025 14:50:42 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"error\",\n    \"traceId\": \"d7a45daa-83da-4f97-afc5-90bd6174abbf\",\n    \"statusCode\": 404,\n    \"errorCode\": \"NOT_FOUND\",\n    \"message\": \"Product not found\",\n    \"error\": \"NOT_FOUND\",\n    \"meta\": {}\n}"
+						},
+						{
+							"name": "DELETE PRODUCT",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{ADMIN_TOKEN}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{URL}}/admin/product/:id",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"admin",
+										"product",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "171"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"ab-JYVLKhB0h0TcFNLCes4mvvRF3xg\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 05 Apr 2025 14:54:53 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"traceId\": \"b0ed5209-4458-477a-83b1-5304417da809\",\n    \"statusCode\": 200,\n    \"message\": \"Product deleted successfully\",\n    \"data\": {},\n    \"successCode\": \"SUCCESS\",\n    \"meta\": {}\n}"
+						}
+					]
+				},
+				{
+					"name": "LIST PRODUCT",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{ADMIN_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/admin/products",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"admin",
+								"products"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "LIST PRODUCT",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{ADMIN_TOKEN}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{URL}}/admin/products",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"admin",
+										"products"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "603"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"25b-3f0OmCeNFeGsenzPmuqkRmSwuT8\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 05 Apr 2025 14:39:32 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"traceId\": \"e3238b73-03e7-4b9f-a83e-1313678d6888\",\n    \"statusCode\": 200,\n    \"data\": {\n        \"products\": [\n            {\n                \"id\": 1,\n                \"name\": \"Sugar 1.5KG\",\n                \"price\": \"69\",\n                \"stock\": 15,\n                \"isAvailable\": true,\n                \"createdAt\": \"2025-04-05T13:21:44.356Z\",\n                \"updatedAt\": \"2025-04-05T14:36:54.111Z\"\n            },\n            {\n                \"id\": 2,\n                \"name\": \"Sugar 500G\",\n                \"price\": \"25\",\n                \"stock\": 10,\n                \"isAvailable\": false,\n                \"createdAt\": \"2025-04-05T13:22:10.527Z\",\n                \"updatedAt\": \"2025-04-05T14:21:55.452Z\"\n            }\n        ],\n        \"pagination\": {\n            \"page\": 1,\n            \"limit\": 10,\n            \"totalProducts\": 2,\n            \"totalPages\": 1,\n            \"hasNextPage\": false,\n            \"hasPreviousPage\": false\n        }\n    },\n    \"message\": \"Grocery items fetched successfully\",\n    \"successCode\": \"FETCHED\",\n    \"meta\": {}\n}"
+						}
+					]
+				},
+				{
+					"name": "UPDATE PRODUCT STOCK",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{ADMIN_TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"price\" : 100\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/admin/product/:id/stock",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"admin",
+								"product",
+								":id",
+								"stock"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "UPDATE PRODUCT STOCK",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{ADMIN_TOKEN}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"stock\" : 100\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/admin/product/:id/stock",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"admin",
+										"product",
+										":id",
+										"stock"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "318"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"13e-056ZYVTYXqpL0hsEdFrWm6+TfnI\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 05 Apr 2025 14:56:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"traceId\": \"47a25ec6-7fc1-4aa8-98fe-551f505e1ef2\",\n    \"statusCode\": 200,\n    \"message\": \"Stock updated successfully\",\n    \"data\": {\n        \"id\": 2,\n        \"name\": \"Sugar 500G\",\n        \"price\": \"25\",\n        \"stock\": 100,\n        \"isAvailable\": false,\n        \"createdAt\": \"2025-04-05T13:22:10.527Z\",\n        \"updatedAt\": \"2025-04-05T14:56:28.634Z\"\n    },\n    \"successCode\": \"UPDATED\",\n    \"meta\": {}\n}"
+						},
+						{
+							"name": "INVALID PROPERTY",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{ADMIN_TOKEN}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"price\" : 100\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/admin/product/:id/stock",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"admin",
+										"product",
+										":id",
+										"stock"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"status": "Unprocessable Entity",
+							"code": 422,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "207"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"cf-LQQxtGboC95gbhhKjxpoW8RbY0U\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 05 Apr 2025 14:57:13 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"error\",\n    \"traceId\": \"97a270fa-4713-477f-808f-5e5fbb4645ff\",\n    \"statusCode\": 422,\n    \"errorCode\": \"00033\",\n    \"message\": \"Validation Failed\",\n    \"error\": \"VALIDATION_FAILED\",\n    \"meta\": [\n        {\n            \"message\": \"Invalid product stock\"\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "SEED",
+			"item": [
+				{
+					"name": "SEED LIST",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Zx4Yt8Wq7Rb6Vo3Np1Md2Sf9Lk0Ju5Hi",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/dev/seed",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"dev",
+								"seed"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SEED",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Zx4Yt8Wq7Rb6Vo3Np1Md2Sf9Lk0Ju5Hi",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/dev/seed/:module?query=5",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"dev",
+								"seed",
+								":module"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "5"
+								}
+							],
+							"variable": [
+								{
+									"key": "module",
+									"value": "admin"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "SEED",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Zx4Yt8Wq7Rb6Vo3Np1Md2Sf9Lk0Ju5Hi",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{URL}}/dev/seed/:module",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"dev",
+										"seed",
+										":module"
+									],
+									"variable": [
+										{
+											"key": "module",
+											"value": "admin"
+										}
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "RateLimit-Policy",
+									"value": "30;w=60"
+								},
+								{
+									"key": "RateLimit-Limit",
+									"value": "30"
+								},
+								{
+									"key": "RateLimit-Remaining",
+									"value": "29"
+								},
+								{
+									"key": "RateLimit-Reset",
+									"value": "60"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "171"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"ab-KuL7BsafJRhFrbQMXYnC0VmsQWQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 26 Feb 2025 12:19:55 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"traceId\": \"5f7ace3f-9923-4183-85d3-a305a15fe722\",\n    \"statusCode\": 201,\n    \"data\": {\n        \"module\": \"admin\"\n    },\n    \"message\": \"SEED SUCCESS\",\n    \"successCode\": \"CREATED\",\n    \"meta\": {}\n}"
+						},
+						{
+							"name": "SEED",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Zx4Yt8Wq7Rb6Vo3Np1Md2Sf9Lk0Ju5Hi",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{URL}}/dev/seed/:module",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"dev",
+										"seed",
+										":module"
+									],
+									"variable": [
+										{
+											"key": "module",
+											"value": "user"
+										}
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "RateLimit-Policy",
+									"value": "30;w=60"
+								},
+								{
+									"key": "RateLimit-Limit",
+									"value": "30"
+								},
+								{
+									"key": "RateLimit-Remaining",
+									"value": "29"
+								},
+								{
+									"key": "RateLimit-Reset",
+									"value": "60"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "170"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"aa-VknMWze9Q0KuUSjNWJJmjTWDYW0\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 26 Feb 2025 16:24:03 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"traceId\": \"2184b09e-a87a-405d-ad22-4323348938be\",\n    \"statusCode\": 201,\n    \"data\": {\n        \"module\": \"user\"\n    },\n    \"message\": \"SEED SUCCESS\",\n    \"successCode\": \"CREATED\",\n    \"meta\": {}\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "PUBLIC",
+			"item": [
+				{
+					"name": "PRODUCT LIST",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"search\": \"\",\n    \"page\": 1,\n    \"limit\": 1,\n    \"orderBy\": \"\",\n    \"orderDirection\": \"\",\n    \"isAvailable\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}",
+							"host": [
+								"{{URL}}"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "SUCCESS",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"search\": \"\",\n    \"page\": 1,\n    \"limit\": 1,\n    \"orderBy\": \"isAvailable\",\n    \"orderDirection\": \"\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}",
+									"host": [
+										"{{URL}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "449"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1c1-ZVvtg+Pbj8dJBzP/HchP5+dQiZE\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 05 Apr 2025 14:19:25 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"traceId\": \"c4e3a619-d073-4101-8a52-f1f31afc1a57\",\n    \"statusCode\": 200,\n    \"data\": {\n        \"products\": [\n            {\n                \"id\": 1,\n                \"name\": \"Sugar 1KG\",\n                \"price\": \"50\",\n                \"stock\": 10,\n                \"isAvailable\": true,\n                \"createdAt\": \"2025-04-05T13:21:44.356Z\",\n                \"updatedAt\": \"2025-04-05T13:21:44.356Z\"\n            }\n        ],\n        \"pagination\": {\n            \"page\": 1,\n            \"limit\": 1,\n            \"totalProducts\": 1,\n            \"totalPages\": 1,\n            \"hasNextPage\": false,\n            \"hasPreviousPage\": false\n        }\n    },\n    \"message\": \"Grocery items fetched successfully\",\n    \"successCode\": \"FETCHED\",\n    \"meta\": {}\n}"
+						},
+						{
+							"name": "DEFAULT",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}",
+									"host": [
+										"{{URL}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "450"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1c2-DtWRN/fKKcJJVm0RmVzBqweY/1k\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 05 Apr 2025 14:20:56 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"traceId\": \"311dadc7-2497-4c7e-828a-820d63779bd7\",\n    \"statusCode\": 200,\n    \"data\": {\n        \"products\": [\n            {\n                \"id\": 1,\n                \"name\": \"Sugar 1KG\",\n                \"price\": \"50\",\n                \"stock\": 10,\n                \"isAvailable\": true,\n                \"createdAt\": \"2025-04-05T13:21:44.356Z\",\n                \"updatedAt\": \"2025-04-05T13:21:44.356Z\"\n            }\n        ],\n        \"pagination\": {\n            \"page\": 1,\n            \"limit\": 10,\n            \"totalProducts\": 1,\n            \"totalPages\": 1,\n            \"hasNextPage\": false,\n            \"hasPreviousPage\": false\n        }\n    },\n    \"message\": \"Grocery items fetched successfully\",\n    \"successCode\": \"FETCHED\",\n    \"meta\": {}\n}"
+						},
+						{
+							"name": "SEARCH",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"search\": \"sugar\",\n    \"page\": 1,\n    \"limit\": 1,\n    \"orderBy\": \"\",\n    \"orderDirection\": \"\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}",
+									"host": [
+										"{{URL}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "449"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1c1-3OP9/Tgo4O4JvsKDDLiLUA6ALbo\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 05 Apr 2025 14:22:20 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"traceId\": \"4c634fc0-3459-412c-b5de-05bf28dfcc7f\",\n    \"statusCode\": 200,\n    \"data\": {\n        \"products\": [\n            {\n                \"id\": 1,\n                \"name\": \"Sugar 1KG\",\n                \"price\": \"50\",\n                \"stock\": 10,\n                \"isAvailable\": true,\n                \"createdAt\": \"2025-04-05T13:21:44.356Z\",\n                \"updatedAt\": \"2025-04-05T13:21:44.356Z\"\n            }\n        ],\n        \"pagination\": {\n            \"page\": 1,\n            \"limit\": 1,\n            \"totalProducts\": 1,\n            \"totalPages\": 1,\n            \"hasNextPage\": false,\n            \"hasPreviousPage\": false\n        }\n    },\n    \"message\": \"Grocery items fetched successfully\",\n    \"successCode\": \"FETCHED\",\n    \"meta\": {}\n}"
+						},
+						{
+							"name": "PAGE AND LIMIT",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"search\": \"\",\n    \"page\": 1,\n    \"limit\": 1,\n    \"orderBy\": \"\",\n    \"orderDirection\": \"\",\n    \"isAvailable\": \"\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}",
+									"host": [
+										"{{URL}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "448"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1c0-cTGp8uQxsZVTWQ19BCcR6Xk3Z88\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 05 Apr 2025 14:30:46 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"traceId\": \"42f48a4e-82d9-41e2-ba51-d4a5e4af3db1\",\n    \"statusCode\": 200,\n    \"data\": {\n        \"products\": [\n            {\n                \"id\": 1,\n                \"name\": \"Sugar 1KG\",\n                \"price\": \"50\",\n                \"stock\": 10,\n                \"isAvailable\": true,\n                \"createdAt\": \"2025-04-05T13:21:44.356Z\",\n                \"updatedAt\": \"2025-04-05T13:21:44.356Z\"\n            }\n        ],\n        \"pagination\": {\n            \"page\": 1,\n            \"limit\": 1,\n            \"totalProducts\": 2,\n            \"totalPages\": 2,\n            \"hasNextPage\": true,\n            \"hasPreviousPage\": false\n        }\n    },\n    \"message\": \"Grocery items fetched successfully\",\n    \"successCode\": \"FETCHED\",\n    \"meta\": {}\n}"
+						},
+						{
+							"name": "AVAILABLE LIST",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"search\": \"\",\n    \"page\": 1,\n    \"limit\": 1,\n    \"orderBy\": \"\",\n    \"orderDirection\": \"\",\n    \"isAvailable\": \"true\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}",
+									"host": [
+										"{{URL}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "449"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1c1-DC/nl/0orpP6LDQx+5BjCKHn5zA\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 05 Apr 2025 14:32:41 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"traceId\": \"4f83dd53-41cd-4e50-9e9f-b63679986fbc\",\n    \"statusCode\": 200,\n    \"data\": {\n        \"products\": [\n            {\n                \"id\": 1,\n                \"name\": \"Sugar 1KG\",\n                \"price\": \"50\",\n                \"stock\": 10,\n                \"isAvailable\": true,\n                \"createdAt\": \"2025-04-05T13:21:44.356Z\",\n                \"updatedAt\": \"2025-04-05T13:21:44.356Z\"\n            }\n        ],\n        \"pagination\": {\n            \"page\": 1,\n            \"limit\": 1,\n            \"totalProducts\": 1,\n            \"totalPages\": 1,\n            \"hasNextPage\": false,\n            \"hasPreviousPage\": false\n        }\n    },\n    \"message\": \"Grocery items fetched successfully\",\n    \"successCode\": \"FETCHED\",\n    \"meta\": {}\n}"
+						},
+						{
+							"name": "NOT AVAILABLE LIST",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"search\": \"\",\n    \"page\": 1,\n    \"limit\": 1,\n    \"orderBy\": \"\",\n    \"orderDirection\": \"\",\n    \"isAvailable\": \"false\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}",
+									"host": [
+										"{{URL}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "451"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1c3-JszitsYKf/i6W4c6LUyNQscE2l4\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 05 Apr 2025 14:32:51 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"traceId\": \"d12a254b-ae1e-4cac-b96a-35770b447620\",\n    \"statusCode\": 200,\n    \"data\": {\n        \"products\": [\n            {\n                \"id\": 2,\n                \"name\": \"Sugar 500G\",\n                \"price\": \"25\",\n                \"stock\": 10,\n                \"isAvailable\": false,\n                \"createdAt\": \"2025-04-05T13:22:10.527Z\",\n                \"updatedAt\": \"2025-04-05T14:21:55.452Z\"\n            }\n        ],\n        \"pagination\": {\n            \"page\": 1,\n            \"limit\": 1,\n            \"totalProducts\": 1,\n            \"totalPages\": 1,\n            \"hasNextPage\": false,\n            \"hasPreviousPage\": false\n        }\n    },\n    \"message\": \"Grocery items fetched successfully\",\n    \"successCode\": \"FETCHED\",\n    \"meta\": {}\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "URL",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "TOKEN",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "ADMIN_TOKEN",
+			"value": "",
+			"type": "string"
+		}
+	]
+}

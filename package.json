@@ -1,0 +1,60 @@
+{
+	"name": "qp-grocery",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"prisma": {
+		"schema": "src/prisma/schema.prisma"
+	},
+	"scripts": {
+		"build": "cross-env NODE_OPTIONS=--max-old-space-size=1024 tsc",
+		"start": "cross-env NODE_OPTIONS=--max-old-space-size=1024 node ./dist/index.js",
+		"start:prod": "cross-env NODE_OPTIONS=--max-old-space-size=1024 node ./dist/index.js",
+		"prod": "npm run build && npm run start",
+		"start:dev": "cross-env NODE_OPTIONS=--max-old-space-size=2048 nodemon --legacy-watch --exec ts-node ./src/index.ts",
+		"prisma:generate": "prisma generate",
+		"prisma:migrate": "prisma migrate dev",
+		"prisma:push": "prisma db push",
+		"prisma:studio": "prisma studio"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"@prisma/client": "^6.5.0",
+		"@types/bcryptjs": "^2.4.6",
+		"@types/cors": "^2.8.17",
+		"@types/debug": "^4.1.12",
+		"@types/express": "^4.17.21",
+		"@types/jsonwebtoken": "^9.0.6",
+		"@types/multer": "^1.4.11",
+		"@types/node": "^22.0.0",
+		"@types/request-ip": "^0.0.41",
+		"@types/uuid": "^10.0.0",
+		"cross-env": "^7.0.3",
+		"nodemon": "^3.1.9",
+		"prisma": "^6.5.0",
+		"ts-node": "^10.9.2",
+		"typescript": "^5.6.3"
+	},
+	"dependencies": {
+		"@aws-sdk/client-s3": "3.529.0",
+		"@faker-js/faker": "^9.5.0",
+		"@types/express-useragent": "^1.0.5",
+		"@types/node-cron": "^3.0.11",
+		"bcryptjs": "^2.4.3",
+		"cors": "^2.8.5",
+		"dotenv": "^16.4.5",
+		"express": "^4.19.2",
+		"express-useragent": "^1.0.15",
+		"express-validator": "^7.1.0",
+		"helmet": "^7.1.0",
+		"http-graceful-shutdown": "^3.1.13",
+		"jsonwebtoken": "^9.0.2",
+		"node-cron": "^3.0.3",
+		"pino": "^9.3.2",
+		"pino-http": "^10.2.0",
+		"pino-pretty": "^11.2.2",
+		"uuid": "^10.0.0"
+	}
+}

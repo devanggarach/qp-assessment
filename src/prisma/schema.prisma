@@ -1,0 +1,58 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+model User {
+  id          Int       @id @default(autoincrement())
+  email       String    @unique
+  passwordHash String
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  orders      Order[]
+}
+
+model Admin {
+  id           Int       @id @default(autoincrement())
+  email        String    @unique
+  passwordHash String
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+}
+
+model GroceryItem {
+  id           Int          @id @default(autoincrement())
+  name         String
+  price        Decimal      @db.Decimal(10,2)
+  stock        Int          // Inventory tracking
+  isAvailable  Boolean      @default(true)
+  createdAt    DateTime     @default(now())
+  updatedAt    DateTime     @updatedAt
+
+  orderItems   OrderItem[]  @relation("GroceryItemToOrderItems")
+}
+
+
+model Order {
+  id          Int       @id @default(autoincrement())
+  userId      Int
+  totalAmount Decimal   @db.Decimal(10,2)
+  createdAt   DateTime  @default(now())
+  user        User      @relation(fields: [userId], references: [id])
+  items       OrderItem[]
+}
+
+model OrderItem {
+  id             Int         @id @default(autoincrement())
+  orderId        Int
+  groceryItemId  Int
+  quantity       Int
+  unitPrice      Decimal     @db.Decimal(10,2)
+  totalPrice     Decimal     @db.Decimal(10,2)
+
+  order          Order       @relation(fields: [orderId], references: [id])
+  groceryItem    GroceryItem @relation("GroceryItemToOrderItems", fields: [groceryItemId], references: [id])
+}
