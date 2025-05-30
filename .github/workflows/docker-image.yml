@@ -14,7 +14,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-    - name: Use Node.js v22.1.4
+    - name: Use Node.js v22.14.0
       uses: actions/setup-node@v4
       with:
         node-version: '22.1.4'
